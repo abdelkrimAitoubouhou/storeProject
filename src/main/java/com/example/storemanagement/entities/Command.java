@@ -33,7 +33,7 @@ public class Command {
     private Set<Product> products = new HashSet<>();
 
     @ManyToOne
-    private Client client;
+    private User user;
 
 
 

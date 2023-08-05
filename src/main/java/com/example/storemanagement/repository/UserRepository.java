@@ -1,9 +1,9 @@
 package com.example.storemanagement.repository;
 
-import com.example.storemanagement.entities.Product;
+import com.example.storemanagement.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 }

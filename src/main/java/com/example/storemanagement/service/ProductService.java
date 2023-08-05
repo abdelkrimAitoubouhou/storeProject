@@ -1,7 +1,5 @@
 package com.example.storemanagement.service;
 
-import com.example.storemanagement.entities.Client;
-import com.example.storemanagement.entities.Command;
 import com.example.storemanagement.entities.Product;
 import org.springframework.stereotype.Service;
 

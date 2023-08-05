@@ -38,7 +38,7 @@ public class Commentaire {
             },
             mappedBy = "commentaires")
     @JsonIgnore
-    private Set<Client> clients = new HashSet<>();
+    private Set<User> users = new HashSet<>();
 
 }
 

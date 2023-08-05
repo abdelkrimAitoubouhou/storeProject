@@ -12,21 +12,19 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "clients")
-public class Client {
+@Table(name = "users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nom;
-    private String email;
-    private String userName;
+    public String nom;
+    public String email;
+    public String userName;
     private String PassWord;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "user")
     private Set<Command> commands = new HashSet<>();
-
-
 
     @ManyToMany(
             fetch = FetchType.LAZY,
@@ -41,5 +39,7 @@ public class Client {
     private Set<Commentaire> commentaires = new HashSet<>();
 
 
-
 }
+
+
+
