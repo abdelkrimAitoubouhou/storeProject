@@ -1,6 +1,6 @@
 package com.example.storemanagement.service.serviceImpl;
 
-import com.example.storemanagement.entities.Commentaire;
+import com.example.storemanagement.entities.Comment;
 import com.example.storemanagement.repository.CommentaireRepository;
 import com.example.storemanagement.service.CommentaireService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,17 +15,17 @@ public class CommentaireServiceImpl implements CommentaireService {
     private CommentaireRepository commentaireRepository;
 
     @Override
-    public void saveComment(Commentaire comment) {
+    public void saveComment(Comment comment) {
         commentaireRepository.save(comment);
     }
 
     @Override
-    public List<Commentaire> findAllComment() {
+    public List<Comment> findAllComment() {
         return commentaireRepository.findAll();
     }
 
     @Override
-    public Commentaire findCommentById(Long id) {
+    public Comment findCommentById(Long id) {
         return commentaireRepository.findById(id).get();
     }
 

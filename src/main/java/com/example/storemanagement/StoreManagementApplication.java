@@ -24,8 +24,8 @@ public class StoreManagementApplication {
     CommandLineRunner runUserAuthentication(AccountService accountService){
         return args -> {
             //add users
-            accountService.addNewUser("user", "user123", "user123", "user@gmail.com");
-            accountService.addNewUser("karim", "karim1234", "karim1234", "karim@gmail.com" );
+            accountService.addNewUser("user", "123", "123", "user@gmail.com");
+            accountService.addNewUser("admin", "123", "123", "admin@gmail.com" );
 
             //add roles
             accountService.addNewRole("ADMIN");
@@ -33,7 +33,8 @@ public class StoreManagementApplication {
 
             //add roles to users
             accountService.addRoleToUser("user", "USER");
-            accountService.addRoleToUser("karim", "ADMIN");
+            accountService.addRoleToUser("admin", "ADMIN");
+            accountService.addRoleToUser("admin", "USER");
 
         };
 }

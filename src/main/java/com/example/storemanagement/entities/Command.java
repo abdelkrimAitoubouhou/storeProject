@@ -23,18 +23,11 @@ public class Command {
     private Date date;
 
 
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
-            mappedBy = "commands")
-    @JsonIgnore
-    private Set<Product> products = new HashSet<>();
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Product> product = new HashSet<>();
 
 
 

@@ -5,19 +5,22 @@ import com.example.storemanagement.authentication.entities.Roles;
 import com.example.storemanagement.authentication.services.AccountService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/connexion")
 @AllArgsConstructor
 @NoArgsConstructor
 public class AuthController {
+    @Autowired
     private AccountService accountService;
 
 
-    @GetMapping("/admin/getClientByUserName")
-    public UserDto getClientByUserName(@RequestParam String username) {
+    @GetMapping("/admin/getUserByUserName")
+    public UserDto getUserByUserName(@RequestParam String username) {
         return accountService.getUserByUserName(username);
     }
 

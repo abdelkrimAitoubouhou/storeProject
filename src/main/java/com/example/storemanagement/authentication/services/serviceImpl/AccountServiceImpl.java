@@ -20,7 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 public class AccountServiceImpl implements AccountService {
 
-        @Autowired
+    @Autowired
     private UserDtoRepository userDtoRepository;
     @Autowired
     private RoleRepository roleRepository;
@@ -69,11 +69,12 @@ public class AccountServiceImpl implements AccountService {
         }
 
         Roles roles = roleRepository.findByRoleName(role);
-        if (roles == null) {
-            throw new IllegalArgumentException("Role not found");
+        if (role == null) {
+            throw new RuntimeException("Role not found!");
         }
 
         userDto.getRoles().remove(roles);
+
         userDtoRepository.save(userDto);
     }
 
