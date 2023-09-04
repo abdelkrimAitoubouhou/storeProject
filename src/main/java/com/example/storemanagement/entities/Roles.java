@@ -1,4 +1,4 @@
-package com.example.storemanagement.authentication.entities;
+package com.example.storemanagement.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

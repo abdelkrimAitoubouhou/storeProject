@@ -3,17 +3,17 @@ package com.example.storemanagement.service.serviceImpl;
 import com.example.storemanagement.entities.Command;
 import com.example.storemanagement.repository.CommandRepository;
 import com.example.storemanagement.service.CommandService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
 public class CommandServiceImpl implements CommandService {
 
-    @Autowired
     private CommandRepository commandRepository;
 
+    public CommandServiceImpl(CommandRepository commandRepository) {
+        this.commandRepository = commandRepository;
+    }
 
     @Override
     public void validateCommend() {
@@ -26,22 +26,22 @@ public class CommandServiceImpl implements CommandService {
     }
 
     @Override
-    public Command findCommandById(Long id) {
+    public Command getCommandById(Long id) {
         return commandRepository.findById(id).get();
     }
 
     @Override
-    public List<Command> findAllCommands() {
-        return commandRepository.findAll();
+    public List<Command> getAllCommands() {
+        return commandRepository.findAllCommands("CONFIRMED");
     }
 
     @Override
-    public void deleteCommandById(Long id) {
+    public void delete(Long id) {
         commandRepository.deleteById(id);
     }
 
     @Override
-    public void deleteAllCommand() {
+    public void deleteAll() {
         commandRepository.deleteAll();
     }
 }

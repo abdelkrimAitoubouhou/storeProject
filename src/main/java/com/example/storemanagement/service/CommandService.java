@@ -8,14 +8,13 @@ import java.util.List;
 @Service
 public interface CommandService {
 
-
     public void validateCommend();
     public void rejectCommend();
 
-    public Command findCommandById(Long id);
+    public Command getCommandById(Long id);
 
-    public List<Command> findAllCommands();
+    public List<Command> getAllCommands();
 
-    public void deleteCommandById(Long id);
-    public void deleteAllCommand();
+    public void delete(Long id);
+    public void deleteAll();
 }
